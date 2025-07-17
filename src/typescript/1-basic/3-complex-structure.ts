@@ -24,7 +24,36 @@ enum Race {
     WIZARD = 'WIZARD',
 }
 
-export const bilbo = {
+type HeroRace = Race.ELF | Race.HOBBIT | Race.HUMAN | Race.WIZARD
+
+interface User {
+    name: string
+    age: number
+    id: string
+    race: Race
+}
+
+interface Monster extends User {
+    race: Race.MONSTER
+    hasRing?: never
+    friends?: never
+    enemies?: Hero[];
+}
+
+interface Hero extends User {
+    race: HeroRace
+    hasRing?: boolean
+    friends?: Hero[]
+    enemies?: Monster[]
+}
+
+interface Wizard extends Hero {
+    hasRing: false
+}
+
+
+
+export const bilbo: Hero = {
     name: 'Bilbo Baggins',
     age: 120,
     id: 'user1',
@@ -55,7 +84,7 @@ export const bilbo = {
     ],
 }
 
-export const gandalf = {
+export const gandalf: Wizard = {
     name: 'Gandalf the Grey',
     age: 2019,
     id: 'user4',
@@ -84,7 +113,7 @@ export const gandalf = {
     hasRing: false,
 }
 
-export const balrog = {
+export const balrog: Monster = {
     // monsters have no fingers so they cant possess rings
     name: 'Balrog the Bridgekeeper',
     age: 15987,

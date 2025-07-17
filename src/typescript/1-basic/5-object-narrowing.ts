@@ -62,7 +62,37 @@ export const human: Human = {
  * Don`t use any casting or `as` operator. example: `arg as Duck` is not allowed.
  * Use as few conditional statements as possible.
  */
+
+const isDuck = (arg: Duck | Parrot | Dog | Human): arg is Duck => {
+    return 'canQuack' in arg
+}
+
+const isHuman = (arg: Duck | Parrot | Dog | Human): arg is Human => {
+    return 'canDrive' in arg
+}
+
+const isDog = (arg: Duck | Parrot | Dog | Human): arg is Dog => {
+    return 'hasTail' in arg
+}
+
+const isParrot = (arg: Duck | Parrot | Dog | Human): arg is Parrot => {
+    return 'canFly' in arg && 'canTalk' in arg && !('canQuack' in arg)
+}
+
 export const narrowAnimal = (arg: Duck | Parrot | Human | Dog): string => {
-    // remove this line and implement the function
-    throw new Error('Not implemented yet')
+    if (isDuck(arg)) {
+        return `${arg.name} is a duck.`
+    }
+
+    if (isHuman(arg)) {
+        return `${arg.name} is a human.`
+    }
+
+    if (isDog(arg)) {
+        return `${arg.name} is a dog.`
+    }
+
+    if (isParrot(arg)) {
+        return `${arg.name} is a parrot.`
+    }
 }

@@ -34,7 +34,6 @@ export type UserForTask2 = {
     livingAddress: string
 }
 
-
 export const user: UserForTask2 = {
     name: 'John Doe',
     age: 30,
