@@ -15,14 +15,14 @@ export type Character = {
  * hint: use generic type that picks properties from Character
  */
 
-export type CharacterNameAndSpecies = undefined
+export type CharacterNameAndSpecies = Pick<Character, 'name' | 'species'>
 
 /**
  * 2. create a type that uses every property of Character except for the `fraction` and `homeWorld`.
  * hint: use generic type that omits properties from Character
  */
 
-export type AsocialCharacter = undefined
+export type AsocialCharacter = Omit<Character, 'fraction' | 'homeWorld'> // or???!!!
 
 /**
  * 3. create a type that is basically the same as Character, but the fraction is always 'Sith' and the lightSaberColor is always `red`.

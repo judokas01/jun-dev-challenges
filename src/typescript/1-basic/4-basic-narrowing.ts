@@ -10,6 +10,10 @@
  */
 
 export const baseNarrowMe = (arg: unknown): string => {
-    // remove this line and implement the function
-    throw new Error('Not implemented yet', arg)
+    if (arg === undefined) return 'I am undefined'
+    if (arg === null) return 'I am null'
+    if (typeof arg === 'string') return 'I am a string'
+    if (typeof arg === 'number') return 'I am a number'
+    if (typeof arg === 'boolean') return 'I am a boolean'
+    return 'What the hell I am?'
 }

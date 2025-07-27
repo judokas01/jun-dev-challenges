@@ -63,6 +63,43 @@ export const human: Human = {
  * Use as few conditional statements as possible.
  */
 export const narrowAnimal = (arg: Duck | Parrot | Human | Dog): string => {
-    // remove this line and implement the function
-    throw new Error('Not implemented yet')
+    if (arg === undefined || arg === null) {
+        return 'What the hell I am?'
+    }
+    if (isDuck(arg)) {
+        return `${arg.name} is a duck.`
+    }
+    if (isParrot(arg)) {
+        return `${arg.name} is a parrot.`
+    }
+    if (isClovek(arg)) {
+        return `${arg.name} is a human.`
+    }
+    if (isDog(arg)) {
+        return `${arg.name} is a dog.`
+    }
+    return 'What the hell I am?'
+}
+
+const isDuck = (arg: Duck | Parrot | Human | Dog): arg is Duck => {
+    return typeof arg === 'object' && arg !== null && 'canQuack' in arg
+}
+
+const isParrot = (arg: Duck | Parrot | Human | Dog): arg is Parrot => {
+    return (
+        typeof arg === 'object' &&
+        arg !== null &&
+        'canTalk' in arg &&
+        !('canQuack' in arg) &&
+        !('hasTail' in arg) &&
+        !('canDrive' in arg)
+    )
+}
+
+const isClovek = (arg: Duck | Parrot | Human | Dog): arg is Human => {
+    return typeof arg === 'object' && arg !== null && 'canDrive' in arg
+}
+
+const isDog = (arg: Duck | Parrot | Human | Dog): arg is Dog => {
+    return typeof arg === 'object' && arg !== null && 'hasTail' in arg
 }

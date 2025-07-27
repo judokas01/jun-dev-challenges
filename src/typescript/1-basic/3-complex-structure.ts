@@ -1,16 +1,16 @@
 /**
  * Create interfaces for each userObject, within the following constraints:
  * 1. create a base interface applicable to all characters
- *
+ **/
 
 interface CharacterBase {
-    name: string;
-    age: number;
-    id: string;
-    race: Race;
-    hasRing?: boolean;
-    friends?: CharacterBase[]; 
-    enemies?: CharacterBase[];
+    name: string
+    age: number
+    id: string
+    race: Race
+    hasRing?: boolean
+    friends?: CharacterBase[]
+    enemies?: CharacterBase[]
 }
 
 enum Race {

@@ -32,20 +32,20 @@ export const balrog: Balrog = {
  * 2. Create again the interfaces, but there should be one base interface and the rest should be extended by this base interface.
  */
 interface CharacterBase {
-    name: string;
-    age: number;
-    id: string;
+    name: string
+    age: number
+    id: string
     race: Race
 }
 
 interface Bilbo extends CharacterBase {
-    hasRing: boolean;
-}  
+    hasRing: boolean
+}
 
 interface Arwen extends CharacterBase {
-    canShootArrow: boolean;
+    canShootArrow: boolean
 }
 
 interface Balrog extends CharacterBase {
-    numberOfDefeatedWizards: number;
+    numberOfDefeatedWizards: number
 }

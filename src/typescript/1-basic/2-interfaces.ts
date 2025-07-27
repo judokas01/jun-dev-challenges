@@ -33,26 +33,25 @@ export const balrog = {
  * 1. Create `interfaces` for each userObject.
  */
 interface Bilbo {
-    name: string;
-    age: number;
-    id: string;
-    race: Race;
+    name: string
+    age: number
+    id: string
+    race: Race
     hasRing: boolean
 }
 
 interface Arwen {
-    name: string;
-    age: number;
-    id: string;
-    race: Race;
-    canShootArrow: boolean;
+    name: string
+    age: number
+    id: string
+    race: Race
+    canShootArrow: boolean
 }
 
 interface Balrog {
-    name: string;
-    age: number;
-    id: string;
-    race: Race;
-    numberOfDefeatedWizards: number;
+    name: string
+    age: number
+    id: string
+    race: Race
+    numberOfDefeatedWizards: number
 }
-

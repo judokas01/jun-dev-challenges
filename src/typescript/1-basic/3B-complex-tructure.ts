@@ -16,30 +16,30 @@
  */
 
 interface CharacterBase {
-    name: string;
-    age: number;
-    id: string;
-    race: Race;
-    hasRing?: boolean;
-    friends?: CharacterBase[]; 
-    enemies?: CharacterBase[];
+    name: string
+    age: number
+    id: string
+    race: Race
+    hasRing?: boolean
+    friends?: CharacterBase[]
+    enemies?: CharacterBase[]
 }
 
-interface Monster extends CharacterBase {  
-    race: Race.MONSTER;
-    hasRing?: never; // monsters cant have rings
-    friends?: never; // monsters cant have friends
+interface Monster extends CharacterBase {
+    race: Race.MONSTER
+    hasRing?: never // monsters cant have rings
+    friends?: never // monsters cant have friends
 }
 
-interface Hero extends CharacterBase { 
-    race: Race.HOBBIT | Race.ELF | Race.HUMAN | Race.WIZARD;
-    hasRing?: boolean; // heroes can have rings
-    friends?: Hero[]; // heroes can have friends
-    enemies?: Monster[]; // heroes can have enemies which are monsters  
+interface Hero extends CharacterBase {
+    race: Race.HOBBIT | Race.ELF | Race.HUMAN | Race.WIZARD
+    hasRing?: boolean // heroes can have rings
+    friends?: Hero[] // heroes can have friends
+    enemies?: Monster[] // heroes can have enemies which are monsters
 }
 
 interface Wizard extends Hero {
-    hasRing?: never; // wizards can never have a ring
+    hasRing?: never // wizards can never have a ring
 }
 
 enum Race {
