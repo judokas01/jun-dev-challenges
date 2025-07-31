@@ -1,0 +1,52 @@
+export type Programmer = {
+    name: string
+    canCode: true
+    hasSex: null
+    canCount: boolean
+    hasEmpathy: false
+}
+
+export type FinanceBro = {
+    name: string
+    canCode: boolean
+    hasSex: 'oh yes'
+    canCount: boolean
+    hasEmpathy: false
+}
+
+export type Hr = {
+    name: string
+    canCode: boolean
+    hasSex: boolean
+    canCount: boolean
+    hasEmpathy: true
+}
+
+export type Madman = {
+    name: string
+    canCode: boolean
+    hasSex: boolean
+    canCount: boolean
+    hasEmpathy: 'oh no no no'
+}
+
+type Professions = Programmer | FinanceBro | Hr | Madman
+
+/**
+ * Narrow down the type of the argument to return a string that describes the person.
+ * It should return a string in the format: "{name} is a '...'.".
+ * Values:
+ * - Programmer: "Bob is a programmer."
+ * - FinanceBro: "Giga is a finance bro."
+ * - Hr: "Linda is an HR."
+ * - Madman: "Hannibal is a madman."
+ *
+ * If nothing matches it should throw an error.
+ *
+ * Rules: - It must use type narrowing methods like `is`.
+ *
+ * `npx jest src/typescript/1-basic/5.1-narrowing.spec.ts`
+ */
+export const narrowPerson = (arg: Professions): string => {
+    throw new Error('Not implemented yet')
+}
