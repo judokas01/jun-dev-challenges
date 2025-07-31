@@ -40,7 +40,6 @@ interface User {
     race: Race
 }
 
-
 /**
  * 2. Create again the interfaces, but there should be one base interface and the rest should be extended by this base interface.
  */

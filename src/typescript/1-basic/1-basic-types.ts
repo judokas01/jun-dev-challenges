@@ -4,13 +4,13 @@
  * `const someNumber: Number = 5` is an explicit type - you tell TS it is number.
  */
 
-export const userName: string = 'John Doe';
-export const userAge: number = 30;
-export const numberOfBrainCells: bigint = 9_223_372_036_854_775_807n;
-export const hasFamilyMembers: boolean = true;
-export const familyMemberNames: string[] = ['Jane Doe', 'Jack Doe'];
-export const bankAccountBalance: null = null;
-export const livingAddress: undefined = undefined;
+export const userName: string = 'John Doe'
+export const userAge: number = 30
+export const numberOfBrainCells: bigint = 9_223_372_036_854_775_807n
+export const hasFamilyMembers: boolean = true
+export const familyMemberNames: string[] = ['Jane Doe', 'Jack Doe']
+export const bankAccountBalance: null = null
+export const livingAddress: undefined = undefined
 
 // export const userName = 'John Doe'
 // export const userAge = 30
@@ -59,8 +59,8 @@ export type User = {
     bankAccountBalance?: number | null
     livingAddress?: string
     race: string
-};
- 
+}
+
 export const user1: User = {
     name: 'Bilbo Baggins',
     age: 120,

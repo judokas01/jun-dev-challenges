@@ -76,7 +76,7 @@ const isDog = (arg: Duck | Parrot | Dog | Human): arg is Dog => {
 }
 
 const isParrot = (arg: Duck | Parrot | Dog | Human): arg is Parrot => {
-    return 'canFly' in arg && 'canTalk' in arg && !('canQuack' in arg)
+    return !isDog(arg) && !isHuman(arg) && !isDuck(arg)
 }
 
 export const narrowAnimal = (arg: Duck | Parrot | Human | Dog): string => {
@@ -95,4 +95,6 @@ export const narrowAnimal = (arg: Duck | Parrot | Human | Dog): string => {
     if (isParrot(arg)) {
         return `${arg.name} is a parrot.`
     }
+
+    return 'What the hell I am?'
 }
