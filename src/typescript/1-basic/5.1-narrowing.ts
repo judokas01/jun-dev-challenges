@@ -49,7 +49,7 @@ type Professions = Programmer | FinanceBro | Hr | Madman
  */
 
 const isProgrammer = (person: Professions): person is Programmer => {
-    return person.hasSex === null && person.canCode === true && person.hasEmpathy === false
+    return person.hasSex === null
 }
 
 const isFinanceBro = (person: Professions): person is FinanceBro => {
