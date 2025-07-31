@@ -48,5 +48,33 @@ type Professions = Programmer | FinanceBro | Hr | Madman
  * `npx jest src/typescript/1-basic/5.1-narrowing.spec.ts`
  */
 export const narrowPerson = (arg: Professions): string => {
-    throw new Error('Not implemented yet')
+    if (isProgrammer(arg)) {
+        return `${arg.name} is a programmer.`
+    }
+    if (isFinanceBro(arg)) {
+        return `${arg.name} is a finance bro.`
+    }
+    if (isHR(arg)) {
+        return `${arg.name} is an HR.`
+    }
+    if (isMadman(arg)) {
+        return `${arg.name} is a madman.`
+    }
+    throw new Error('Probably unicorn')
+}
+
+const isProgrammer = (arg: Professions): arg is Programmer => {
+    return arg.hasSex === null
+}
+
+const isFinanceBro = (arg: Professions): arg is FinanceBro => {
+    return arg.hasSex === 'oh yes'
+}
+
+const isHR = (arg: Professions): arg is Hr => {
+    return arg.hasEmpathy === true
+}
+
+const isMadman = (arg: Professions): arg is Madman => {
+    return arg.hasEmpathy === 'oh no no no'
 }
