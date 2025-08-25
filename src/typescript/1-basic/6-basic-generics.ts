@@ -30,7 +30,10 @@ export type AsocialCharacter = Omit<Character, 'fraction' | 'homeWorld'> // or??
  * hint: This should be very simmilar to the previous task, but you will need to add a few properties to the Character type.
  */
 
-export type Sith = undefined
+export type Sith = Character & {
+    fraction: 'Sith'
+    lightsaberColor: 'red'
+}
 
 /**
  * 4. create a type that is basically the same as Character, but the lightsaberColor can not be `null`.
@@ -38,7 +41,9 @@ export type Sith = undefined
  * hint: This should be very simmilar to the previous task, but you will need to use a utility type that makes sure the lightsaberColor is not null.
  */
 
-export type LightSaberOwner = Character
+export type LightSaberOwner = Character & {
+    lightsaberColor: Exclude<Character['lightsaberColor'], null>
+}
 
 export const oldLuke: LightSaberOwner = {
     // lightsaber should be marked as error
