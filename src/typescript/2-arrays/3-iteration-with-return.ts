@@ -41,6 +41,7 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
  * At some ways there is no other way, for some this is redundant.
  *
  * BTW in one of those this is really painful and i dont expect all four ways to be completed.
+ * But all can be achieved.
  *
  */
 
