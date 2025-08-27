@@ -16,10 +16,28 @@ export const myFavoriteNumbers = [1, 13, 71, 387, 250]
  *
  */
 
-export const iterateForIn = (elements: number[]): void => {}
 
-export const iterateForOf = (elements: number[]): void => {}
+//mám to takhle přepsat ty elements na myFavouriteNumbers? testy mi projdou i tak
+export const iterateForIn = (myFavoriteNumbers: number[]): void => {
+    for (const i in myFavoriteNumbers) {
+        console.log(myFavoriteNumbers[i])
+    }
+}
 
-export const iterateForEach = (elements: number[]): void => {}
+export const iterateForOf = (elements: number[]): void => {
+    for (const i of myFavoriteNumbers) {
+        console.log(i)
+    }
+}
 
-export const iterateMap = (elements: number[]): void => {}
+export const iterateForEach = (elements: number[]): void => {
+    myFavoriteNumbers.forEach((i) => {
+        console.log(i)
+    })
+}
+
+export const iterateMap = (elements: number[]): void => {
+    myFavoriteNumbers.map((i) => {
+        console.log(i)
+    })
+}

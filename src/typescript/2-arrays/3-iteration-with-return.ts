@@ -15,13 +15,33 @@ export const myFavoriteNumbers = [3, 7, 21, 42, 99]
  *
  */
 
-export const iterateForIn = (elements: number[], multiplier: number): number[] => {}
+export const iterateForIn = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    for (const i in elements) {
+        result.push(elements[i] * multiplier)
+    }
+    return result
+}
 
-export const iterateForOf = (elements: number[], multiplier: number): number[] => {}
+export const iterateForOf = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    for (const i of elements) {
+        result.push(i * multiplier)
+    }
+    return result
+}
 
-export const iterateForEach = (elements: number[], multiplier: number): number[] => {}
+export const iterateForEach = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    elements.forEach((i) => {
+        result.push(i * multiplier)
+    })
+    return result
+}
 
-export const iterateMap = (elements: number[], multiplier: number): number[] => {}
+export const iterateMap = (elements: number[], multiplier: number): number[] => {
+    return elements.map((i) => i * multiplier)
+}
 
 /**
  * 2.
@@ -45,10 +65,30 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
  *
  */
 
-export const iterateForInByIndex = (elements: number[]): number[] => {}
+export const iterateForInByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    for (const i in elements) {
+        result.push(elements[i] * Number(i))
+    }
+    return result
+}
 
-export const iterateForOfByIndex = (elements: number[]): number[] => {}
+export const iterateForOfByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    for (const [i, index] of elements.entries()) {
+        result.push(i * index)
+    }
+    return result
+}
 
-export const iterateForEachByIndex = (elements: number[]): number[] => {}
+export const iterateForEachByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    elements.forEach((i, index) => {
+        result.push(i * index)
+    })
+    return result
+}
 
-export const iterateMapByIndex = (elements: number[]): number[] => {}
+export const iterateMapByIndex = (elements: number[]): number[] => {
+    return elements.map((i, index) => i * index)
+}
