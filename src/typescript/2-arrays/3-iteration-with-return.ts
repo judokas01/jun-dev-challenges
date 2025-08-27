@@ -40,6 +40,8 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
  * Just a hint: Maybe you will need some helper array to store the results.
  * At some ways there is no other way, for some this is redundant.
  *
+ * BTW in one of those this is really painful and i dont expect all four ways to be completed.
+ *
  */
 
 export const iterateForInByIndex = (elements: number[]): number[] => {}
