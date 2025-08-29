@@ -16,10 +16,31 @@ export const myFavoriteNumbers = [1, 13, 71, 387, 250]
  *
  */
 
-export const iterateForIn = (elements: number[]): void => {}
+// returns only index, that's why we have to log elements[index]s
+export const iterateForIn = (elements: number[]): void => {
+    for (const index in elements) {
+        console.log(elements[index])
+    }
+}
 
-export const iterateForOf = (elements: number[]): void => {}
+// check the numbers, log numbers
+export const iterateForOf = (elements: number[]): void => {
+    for (const numbers of elements) {
+        console.log(numbers)
+    }
+}
 
-export const iterateForEach = (elements: number[]): void => {}
+// only logs numbers?
+export const iterateForEach = (elements: number[]): void => {
+    elements.forEach((numbers) => {
+        console.log(numbers)
+    })
+}
 
-export const iterateMap = (elements: number[]): void => {}
+// map creates new array - difference with forEach - use for transformation of array
+// returns new array
+export const iterateMap = (elements: number[]): void => {
+    elements.map((numbers) => {
+        console.log(numbers)
+    })
+}

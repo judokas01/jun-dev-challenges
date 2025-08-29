@@ -15,13 +15,33 @@ export const myFavoriteNumbers = [3, 7, 21, 42, 99]
  *
  */
 
-export const iterateForIn = (elements: number[], multiplier: number): number[] => {}
+export const iterateForIn = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    for (const numbers in elements) {
+        result.push(elements[numbers] * multiplier)
+    }
+    return result
+}
 
-export const iterateForOf = (elements: number[], multiplier: number): number[] => {}
+export const iterateForOf = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    for (const numbers of elements) {
+        result.push(numbers * multiplier)
+    }
+    return result
+}
 
-export const iterateForEach = (elements: number[], multiplier: number): number[] => {}
+export const iterateForEach = (elements: number[], multiplier: number): number[] => {
+    const result: number[] = []
+    elements.forEach((numbers) => {
+        result.push(numbers * multiplier)
+    })
+    return result
+}
 
-export const iterateMap = (elements: number[], multiplier: number): number[] => {}
+export const iterateMap = (elements: number[], multiplier: number): number[] => {
+    return elements.map((numbers) => numbers * multiplier)
+}
 
 /**
  * 2.
@@ -45,10 +65,40 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
  *
  */
 
-export const iterateForInByIndex = (elements: number[]): number[] => {}
+// iterate through indexes in elements - take the value of elements[index] * by its index
+// index is returned as string - must be changed to number
+// for in returns only index as strings
+// elements[index] - returns number from array
+// Number(index) - index from string to number
+export const iterateForInByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    for (const index in elements) {
+        result.push(elements[index] * Number(index))
+    }
+    return result
+}
 
-export const iterateForOfByIndex = (elements: number[]): number[] => {}
+// for of returns values, not indexes - I need to check index manually (let index = 0)
+// check every number in elements array and store it in the variable numbers
+// index++ : use actual value of index, add 1
+export const iterateForOfByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    let index = 0
+    for (const numbers of elements) {
+        result.push(numbers * index++)
+    }
+    return result
+}
 
-export const iterateForEachByIndex = (elements: number[]): number[] => {}
+// forEach - returns the number and also the index
+export const iterateForEachByIndex = (elements: number[]): number[] => {
+    const result: number[] = []
+    elements.forEach((numbers, index) => {
+        result.push(numbers * index)
+    })
+    return result
+}
 
-export const iterateMapByIndex = (elements: number[]): number[] => {}
+export const iterateMapByIndex = (elements: number[]): number[] => {
+    return elements.map((number, index) => number * index)
+}
