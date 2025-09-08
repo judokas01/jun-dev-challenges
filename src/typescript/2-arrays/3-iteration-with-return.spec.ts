@@ -12,7 +12,7 @@ import {
 describe('simple iteration with return', () => {
     const numbers = [1, 7, 54, 99]
     const indexMultiplierInput = [2, 4, 6]
-    const indexMultiplierOutput = [2, 4, 6]
+    const indexMultiplierOutput = [0, 4, 12]
     const multiplier = 14
 
     it.each([iterateForIn, iterateForEach, iterateForOf, iterateMap])(
