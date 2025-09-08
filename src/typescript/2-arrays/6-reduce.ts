@@ -5,7 +5,9 @@
  * npx jest src/typescript/2-arrays/6-reduce.spec.ts -t 'should sum all elements'
  */
 
-export const sumArray = (pokemons: number[]): number => {}
+export const sumArray = (pokemons: number[]): number => {
+    return pokemons.reduce((sum, number) => sum + number)
+}
 
 // --------------------------
 

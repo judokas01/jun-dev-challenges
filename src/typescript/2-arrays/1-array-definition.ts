@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * 1. Define an array of strings.
  * Let's call it fruits and let's fill it with some of your favorite fruits.
@@ -17,9 +16,9 @@
  * And fill the array with some of your favorite light sabers :-).
  */
 
-const fruits: string[] = ['watermelon', 'strawberry', 'banana', 'mango']
+export const fruits: string[] = ['watermelon', 'strawberry', 'banana', 'mango']
 
-const numbers: number[] = [2, 4, 14, 5]
+export const numbers: number[] = [2, 4, 14, 5]
 
 type LightSaber = {
     color: string
@@ -27,7 +26,7 @@ type LightSaber = {
     numberOfKilled: number
 }
 
-const lightSabers: LightSaber[] = [
+export const lightSabers: LightSaber[] = [
     {
         color: 'pink',
         owner: 'Someone',

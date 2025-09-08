@@ -8,7 +8,10 @@
  *
  */
 
-export const filterLowerOrEqual = (elements: number[], lowerThan: number): number[] => {}
+export const filterLowerOrEqual = (elements: number[], lowerThan: number): number[] => {
+    const filtered = elements.filter((element) => element > lowerThan)
+    return filtered
+}
 
 // --------------------------
 
@@ -29,7 +32,10 @@ export type Pokemon = { name: string; element: PokemonElement; power: number; ow
  *
  */
 
-export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {}
+export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {
+    const filtered = elements.filter((element) => element !== null)
+    return filtered as Pokemon[]
+}
 
 /**
  * 3.
@@ -45,4 +51,15 @@ export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {}
  *
  */
 
-export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {}
+// testy failují, vrací mi Charizarda, nevím proč :( - téma na hatchery
+export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {
+    return elements
+        .filter((element) => element !== null)
+        .filter((element) => element.owner !== null)
+        .filter((element) => element.power > 20)
+        .filter(
+            (element) =>
+                element.element === PokemonElement.Fire ||
+                element.element === PokemonElement.Electricity,
+        )
+}
