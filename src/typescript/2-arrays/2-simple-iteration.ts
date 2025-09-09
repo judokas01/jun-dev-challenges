@@ -17,27 +17,26 @@ export const myFavoriteNumbers = [1, 13, 71, 387, 250]
  */
 
 
-//mám to takhle přepsat ty elements na myFavouriteNumbers? testy mi projdou i tak
-export const iterateForIn = (myFavoriteNumbers: number[]): void => {
-    for (const i in myFavoriteNumbers) {
+export const iterateForIn = (elements: number[]): void => {
+    for (let i = 0; i < elements.length; i++) {
         console.log(myFavoriteNumbers[i])
     }
 }
 
 export const iterateForOf = (elements: number[]): void => {
-    for (const i of myFavoriteNumbers) {
+    for (const i of elements) {
         console.log(i)
     }
 }
 
 export const iterateForEach = (elements: number[]): void => {
-    myFavoriteNumbers.forEach((i) => {
+    elements.forEach((i) => {
         console.log(i)
     })
 }
 
 export const iterateMap = (elements: number[]): void => {
-    myFavoriteNumbers.map((i) => {
+    elements.map((i) => {
         console.log(i)
     })
 }

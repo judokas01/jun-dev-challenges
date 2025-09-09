@@ -8,9 +8,9 @@
  *
  */
 
-export const filterLowerOrEqual = (elements: number[], lowerThan: number): number[] => {}
-
-// --------------------------
+export const filterLowerOrEqual = (elements: number[], lowerThan: number): number[] => {
+    return elements.filter((element) => element > lowerThan)
+}
 
 export enum PokemonElement {
     Earth = 'Earth',
@@ -29,7 +29,12 @@ export type Pokemon = { name: string; element: PokemonElement; power: number; ow
  *
  */
 
-export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {}
+export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {
+    if (elements === null) {
+        return []
+    }
+    return elements
+}
 
 /**
  * 3.
