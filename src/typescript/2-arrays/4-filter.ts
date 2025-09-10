@@ -30,10 +30,7 @@ export type Pokemon = { name: string; element: PokemonElement; power: number; ow
  */
 
 export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {
-    if (elements === null) {
-        return []
-    }
-    return elements
+    return elements.filter((element): element is Pokemon => element !== null)
 }
 
 /**
@@ -50,4 +47,15 @@ export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {
  *
  */
 
-export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {}
+export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {
+    const notNull = (pokemon: Pokemon | null): pokemon is Pokemon => pokemon !== null
+
+    const hasOwner = (pokemon: Pokemon): boolean => pokemon.owner !== null
+
+    const hasPower = (pokemon: Pokemon): boolean => pokemon.power > 20
+
+    const hasCorrectElement = (pokemon: Pokemon): boolean =>
+        pokemon.element === PokemonElement.Fire || pokemon.element === PokemonElement.Electricity
+
+    return elements.filter(notNull).filter(hasOwner).filter(hasPower).filter(hasCorrectElement)
+}
