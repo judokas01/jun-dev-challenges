@@ -17,8 +17,8 @@ export const myFavoriteNumbers = [3, 7, 21, 42, 99]
 
 export const iterateForIn = (elements: number[], multiplier: number): number[] => {
     const result: number[] = []
-    for (const i in elements) {
-        result.push(elements[i] * multiplier)
+    for (let i = 0; i < elements.length; i++) {
+        result.push(i * multiplier)
     }
     return result
 }
@@ -67,8 +67,8 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
 
 export const iterateForInByIndex = (elements: number[]): number[] => {
     const result: number[] = []
-    for (const i in elements) {
-        result.push(elements[i] * Number(i))
+    for (let i = 0; i < elements.length; i++) {
+        result.push(i * Number(i))
     }
     return result
 }

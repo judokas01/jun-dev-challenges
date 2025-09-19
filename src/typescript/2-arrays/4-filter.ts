@@ -59,3 +59,17 @@ export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => 
 
     return elements.filter(notNull).filter(hasOwner).filter(hasPower).filter(hasCorrectElement)
 }
+
+// šimonův způsob
+
+export const filterOutByCriteriaSimon = (elements: (Pokemon | null)[]): Pokemon[] => {
+    return elements.filter(notNull).filter(hasOwner).filter(hasPower).filter(hasCorrectElement)}
+
+const notNull = (pokemon: Pokemon | null): pokemon is Pokemon => pokemon !== null
+
+const hasOwner = (pokemon: Pokemon): boolean => pokemon.owner !== null
+
+const hasPower = (pokemon: Pokemon): boolean => pokemon.power > 20
+
+const hasCorrectElement = (pokemon: Pokemon): boolean =>
+    pokemon.element === PokemonElement.Fire || pokemon.element === PokemonElement.Electricity
