@@ -18,8 +18,12 @@ export const myFavoriteNumbers = [1, 13, 71, 387, 250]
 
 // returns only index, that's why we have to log elements[index]s
 export const iterateForIn = (elements: number[]): void => {
-    for (const index in elements) {
-        console.log(elements[index])
+    for (let index = 0; index < elements.length; index++) {
+        if (index > 4) {
+            continue
+        }
+        const element = elements[index]
+        console.log(element)
     }
 }
 

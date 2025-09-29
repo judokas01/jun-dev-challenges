@@ -27,7 +27,44 @@ type AnimalProperties = {
  *
  */
 
-class Animal {}
+export class Animal implements AnimalProperties, AnimalInterface {
+    species: string
+    weightInKilograms: number
+    allowedFood: string[]
+
+    private stomach: string[] = []
+    private stomachCapacity: number
+
+    constructor(species: string, weightInKilograms: number, allowedFood: string[]) {
+        this.species = species
+        this.weightInKilograms = weightInKilograms
+        this.allowedFood = allowedFood
+        this.stomachCapacity = // nevím
+    }
+
+    eat(food: string): string {
+        if (this.stomach.length >= this.stomachCapacity) {
+            return `${this.species} is full!`
+        }
+
+        if (!this.allowedFood.includes(food)) {
+            return `${this.species} cannot eat ${food}`
+        }
+
+        this.stomach.push(food)
+        return `${this.species} ate ${food}`
+    }
+
+    // let i = 0 - spal 0 hodin, začátek
+    // i < sleepDuration - když má sleepDuration napr. 3, smyčka se spustí pro i = 0,1,2
+    // i++ - po každé smyčce se i zvýší o 1 (1 hodina, 2 hodina, 3 hodina)
+    sleep(sleepDuration: number): number {
+        for (let i = 0; i < sleepDuration; i++) {
+            this.stomach.pop()
+        }
+        return this.stomach.length
+    }
+}
 
 /**
  * Second part of this challenge:
@@ -44,8 +81,21 @@ class Animal {}
  *
  */
 
+export class AverageAmerican extends Animal {}
+
+export class Mayfly extends Animal {}
+
+export class Jellyfish extends Animal {}
+
 /**
  * Third part:
  *
  * Create interfaces and all this but when implementing the interfaces
  */
+export interface AnimalInterface {
+    species: string
+    weightInKilograms: number
+    allowedFood: string[]
+    eat(food: string): string
+    sleep(sleepDuration: number): number
+}

@@ -15,14 +15,14 @@ export type Character = {
  * hint: use generic type that picks properties from Character
  */
 
-export type CharacterNameAndSpecies = undefined
+export type CharacterNameAndSpecies = Pick<Character, 'name' | 'species'>
 
 /**
  * 2. create a type that uses every property of Character except for the `fraction` and `homeWorld`.
  * hint: use generic type that omits properties from Character
  */
 
-export type AsocialCharacter = undefined
+export type AsocialCharacter = Omit<Character, 'fraction' | 'homeWorld'>
 
 /**
  * 3. create a type that is basically the same as Character, but the fraction is always 'Sith' and the lightSaberColor is always `red`.
@@ -30,7 +30,10 @@ export type AsocialCharacter = undefined
  * hint: This should be very simmilar to the previous task, but you will need to add a few properties to the Character type.
  */
 
-export type Sith = undefined
+export type Sith = Omit<Character, 'fraction' | 'lightsaberColor'> & {
+    fraction: 'Sith'
+    lightsaberColor: 'red'
+}
 
 /**
  * 4. create a type that is basically the same as Character, but the lightsaberColor can not be `null`.
@@ -38,7 +41,9 @@ export type Sith = undefined
  * hint: This should be very simmilar to the previous task, but you will need to use a utility type that makes sure the lightsaberColor is not null.
  */
 
-export type LightSaberOwner = Character
+export type LightSaberOwner = Omit<Character, 'lightsaberColor'> & {
+    lightsaberColor: NonNullable<Character['lightsaberColor']>
+}
 
 export const oldLuke: LightSaberOwner = {
     // lightsaber should be marked as error
@@ -67,8 +72,8 @@ export const oldLuke: LightSaberOwner = {
  * But this is typical useCase for this generic, so feel free to implement it as you wish.
  */
 
-export const updateCharacter = (character: Character, updates: unknown): Character => {
-    throw new Error('Not implemented')
+export const updateCharacter = (character: Character, updates: Partial<Character>): Character => {
+    return { ...character, ...updates }
 }
 
 /**
@@ -78,7 +83,7 @@ export const updateCharacter = (character: Character, updates: unknown): Charact
  */
 
 export const getCharacterProperty = (character: Character, property: keyof Character): string => {
-    throw new Error('Not implemented')
+    return String(character[property])
 }
 
 /**
@@ -86,6 +91,7 @@ export const getCharacterProperty = (character: Character, property: keyof Chara
  * This is a little more complex, but i could not resist the temptation to add it.
  */
 
+// no idea - téma na hatchery?
 export const getProperty = (objectToExtract: unknown, property: unknown): string => {
     throw new Error('Not implemented')
 }

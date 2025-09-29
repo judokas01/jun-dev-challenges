@@ -51,7 +51,6 @@ export const filterOutNullish = (elements: (Pokemon | null)[]): Pokemon[] => {
  *
  */
 
-// testy failují, vrací mi Charizarda, nevím proč :( - téma na hatchery
 export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {
     return elements
         .filter((element) => element !== null)
@@ -63,3 +62,20 @@ export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => 
                 element.element === PokemonElement.Electricity,
         )
 }
+
+// přes funkci
+// export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {
+//     const criteria = (pokemon: Pokemon | null): pokemon is Pokemon => {
+//         return (
+//             pokemon !== null &&
+//             pokemon.owner !== null &&
+//             pokemon.power > 20 &&
+//             (pokemon.element === PokemonElement.Fire ||
+//                 pokemon.element === PokemonElement.Electricity)
+//         )
+//     }
+
+//     export const filterOutByCriteria = (elements: (Pokemon | null)[]): Pokemon[] => {
+//         return elements.filter(criteria)
+//     }
+// }

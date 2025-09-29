@@ -17,8 +17,9 @@ export const myFavoriteNumbers = [3, 7, 21, 42, 99]
 
 export const iterateForIn = (elements: number[], multiplier: number): number[] => {
     const result: number[] = []
-    for (const numbers in elements) {
-        result.push(elements[numbers] * multiplier)
+
+    for (const element of elements) {
+        result.push(element * multiplier)
     }
     return result
 }
@@ -71,11 +72,16 @@ export const iterateMap = (elements: number[], multiplier: number): number[] => 
 // elements[index] - returns number from array
 // Number(index) - index from string to number
 export const iterateForInByIndex = (elements: number[]): number[] => {
-    const result: number[] = []
-    for (const index in elements) {
-        result.push(elements[index] * Number(index))
+    const resultFromForLoop: number[] = []
+
+    for (let index = 0; index < elements.length; index++) {
+        if (index > 5) {
+            continue
+        }
+        const element = elements[index]
+        resultFromForLoop.push(element * index)
     }
-    return result
+    return resultFromForLoop
 }
 
 // for of returns values, not indexes - I need to check index manually (let index = 0)
