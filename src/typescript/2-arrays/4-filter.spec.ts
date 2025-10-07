@@ -60,6 +60,7 @@ describe('filter tests', () => {
                 power: 99999,
                 owner: 'Ash',
             },
+            { element: PokemonElement.Fire, name: 'Charizard', power: 21, owner: 'Brock' },
         ]
 
         const result = filterOutByCriteria(inputArray)
