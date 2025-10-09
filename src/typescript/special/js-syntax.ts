@@ -79,11 +79,24 @@ const primaryAddress = {
 
 const deliveryAddress = {
     street: secondaryAddress.company?.address?.street ?? primaryAddress.address.street,
+    street: secondaryAddress.company?.address?.street || primaryAddress.address.street,
     postalCode: secondaryAddress.company?.address?.postalCode ?? primaryAddress.address.postalCode,
     city: secondaryAddress.company?.address?.city ?? primaryAddress.address.city,
 }
 
 // nullish coalescing ??
+
+number > 0 && number < 300 // 1-299
+number > 0 || number === -30 // 1- infinite, or -30
+
+// ?? -
+
+// null, undefined, '', false -> || // falsy
+//  null, undefined  -> ?? // nulish
+
+// || - logic OR
+
+// && - logic AND
 
 // Logical or ||
 
@@ -91,11 +104,61 @@ const deliveryAddress = {
 
 // qualities == vs ===
 
-// spread and destructuring
+'3' === 3 // false
+'3' == 3 // true
 
-// variable inside string
+const kid = { age: 3, name: 'Paul' }
+
+kid === kid // true
+
+kid === { age: 3, name: 'Paul' } // false
 
 // if else vs ternary
+
+const myResult = kid.age === 3 ? 'is 3 years old' : 'is not 3 years old'
+
+const getAgeResult = (kid: { age: number }): string => {
+    if (kid.age === 3) {
+        return 'is 3 years old'
+    } else if (kid.age === 4) {
+        return 'is 4 years old'
+    } else {
+        return 'is not 3 years old'
+    }
+}
+
+// multi ternary
+const myResult =
+    kid.age === 3 ? 'is 3 years old' : kid.age === 4 ? 'is 4 years old' : 'is not 3 years old'
+
+// spread and destructuring
+
+const superHero = { firstName: 'Batman', age: 30, address: { street: '123 Street' } }
+const superAnimal = { name: 'Bat', age: 10, address: { street: 'Cave' } }
+
+// const { name, age } = superHero
+
+const { firstName, age } = superHero
+const { name: animalName, age: animalAge } = superAnimal
+
+const myText = `My superhero is ${age} years old and his name is ${firstName}`
+const myTextWithAnimal = `My superhero is ${animalAge} years old and his name is ${animalName}`
+
+//  array deconstructin
+
+const myArray = [1, 2, 3, 4]
+
+const [firstElement, secondElement, thirdElement, fourthElement] = [1, 2, 3, 4]
+const [firstElement, ...rest] = [1, 2, 3, 4]
+
+console.log(rest) // output = [2,3,4]
+
+const { firstName, ...otherPropertiesOfBatman } = superHero
+
+const myNewOlderSuperHero = { ...otherPropertiesOfBatman, age: 60 }
+// console.log(myNewOlderSuperHero) => output { firstName: 'Batman', age: 60, address: { street: '123 Street' } }
+
+// variable inside string
 
 // Remainder assignment %=
 
