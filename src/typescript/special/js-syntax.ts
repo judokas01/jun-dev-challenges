@@ -160,6 +160,55 @@ const myNewOlderSuperHero = { ...otherPropertiesOfBatman, age: 60 }
 
 // variable inside string
 
+const resultedText =
+    '                  ' + 'my name is ' + firstName + ' and I am ' + age + ' years old.'
+const resultedText = `
+             my name 
+            is ${firstName}
+                     and I am ${age} years 
+                     old.`
+
+const lmnasglkan = `
+    my name 
+            is ${firstName == 1 ? firstName : 'no name'}
+                     and I am ${age} years 
+                     old.`
+
 // Remainder assignment %=
 
-// negation !
+// const remaining = (25 %= 4) === 1
+const isEven = (number: number): boolean => number % 2 === 0
+// const remaining = (25 %= 4) === 1
+
+const isOdd = (number: number): boolean => !isEven(number)
+
+const isEvenAgain = (number: number): boolean => !!isEven(number)
+
+const isOddAgain = (number: number): boolean => !isEven(number)
+
+const myVal: Value = 'string'
+
+const truthy = 1
+
+const falsy = undefined
+const falsy = null
+
+const isTrue = !!myVal
+const isTrue = Boolean(myVal)
+
+type Value = string | undefined | null | number | boolean
+const isTruthy = (myValue: Value): boolean => {
+    // truthy values: non empty string, non zero number, true
+
+    // falsy values: '', 0, false, null, undefined
+    return Boolean(myValue)
+    return !!myValue
+}
+
+const isFalsy = (myValue: Value): boolean => {
+    // truthy values: non empty string, non zero number, true
+    // falsy values: '', 0, false, null, undefined
+
+    return !myValue
+    // return !Boolean(myValue)
+}
