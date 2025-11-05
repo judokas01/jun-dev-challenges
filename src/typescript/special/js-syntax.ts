@@ -212,3 +212,22 @@ const isFalsy = (myValue: Value): boolean => {
     return !myValue
     // return !Boolean(myValue)
 }
+
+// object spread
+
+const a = {
+    city: 'New York',
+    ...(input.billingAddress2 ? { address2: faker.location.secondaryAddress() } : {}),
+}
+
+if (input.billingAddress2) {
+    return {
+        city: 'New York',
+        address2: faker.location.secondaryAddress(),
+    }
+} else {
+    return {
+        city: 'New York',
+        // address2: undefined,
+    }
+}
