@@ -4,7 +4,9 @@
  *
  */
 
-export const sortAlphabeticallyAsc = (elements: string[]): string[] => {}
+export const sortAlphabeticallyAsc = (elements: string[]): string[] => {
+    return elements.sort((a, b) => a.localeCompare(b))
+}
 
 /**
  * 2.
@@ -23,4 +25,6 @@ export type Pokemon = { name: string; owner: string }
  *
  */
 
-export const sortByPokemonName = (elements: Pokemon[]): Pokemon[] => {}
+export const sortByPokemonName = (elements: Pokemon[]): Pokemon[] => {
+    return elements.sort((a, b) => a.name.localeCompare(b.name))
+}

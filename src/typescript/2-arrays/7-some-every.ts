@@ -7,7 +7,9 @@
  * npx jest src/typescript/2-arrays/7-some-every.spec.ts
  */
 
-export const isAtLeastOneGreaterThan = (elements: number[], threshold: number): boolean => {}
+export const isAtLeastOneGreaterThan = (elements: number[], threshold: number): boolean => {
+    return elements.some((element) => element > threshold)
+}
 
 /**
  * 2.
@@ -17,7 +19,9 @@ export const isAtLeastOneGreaterThan = (elements: number[], threshold: number): 
  * test
  */
 
-export const areAllGreaterThan = (elements: number[], threshold: number): boolean => {}
+export const areAllGreaterThan = (elements: number[], threshold: number): boolean => {
+    return elements.every((element) => element > threshold)
+}
 
 /**
  * 3.
@@ -27,7 +31,9 @@ export const areAllGreaterThan = (elements: number[], threshold: number): boolea
  * test
  */
 
-export const isAtLeastOneBetween = (elements: number[], lower: number, upper: number): boolean => {}
+export const isAtLeastOneBetween = (elements: number[], lower: number, upper: number): boolean => {
+    return elements.some((element) => element > lower && element < upper)
+}
 
 export enum PokemonElement {
     Earth = 'Earth',
@@ -49,7 +55,9 @@ export type PokemonWithoutOwner = { name: string; element: PokemonElement; power
 export const isAtLeastOnePokemonGreaterThan = (
     pokemons: PokemonWithoutOwner[],
     threshold: number,
-): boolean => {}
+): boolean => {
+    return pokemons.some((pokemon) => pokemon.power > threshold)
+}
 
 /**
  * 5.
@@ -60,4 +68,6 @@ export const isAtLeastOnePokemonGreaterThan = (
 export const areAllPokemonsOfElement = (
     pokemons: PokemonWithoutOwner[],
     element: PokemonElement,
-): boolean => {}
+): boolean => {
+    return pokemons.every((pokemon) => pokemon.element === element)
+}

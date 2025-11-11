@@ -14,7 +14,22 @@ export type PokemonWithoutOwner = { name: string; element: PokemonElement; power
  * So the output should be something like: "GolemOnixSquirtlePsyduck..."
  */
 
-export const joinPokemonName = (pokemons: PokemonWithoutOwner[]): string => {}
+export const joinPokemonName = (pokemons: PokemonWithoutOwner[]): string => {
+    //A
+    return pokemons.reduce((acc1, pokemon3) => acc1 + pokemon3.name, '')
+
+    //B
+    /*return pokemons.reduce((acc1, pokemon3) => {
+        const res = acc1 + pokemon3.name
+        return res
+    }, '')*/
+
+    //C
+    /*return pokemons.reduce(myMethod1, '')
+    export const myMethod1 = (acc: string, pokemon: PokemonWithoutOwner, i: number): string => {
+        return acc + pokemon.name + i
+    }*/
+}
 
 /**
  * 2.
@@ -22,7 +37,10 @@ export const joinPokemonName = (pokemons: PokemonWithoutOwner[]): string => {}
  *
  */
 
-export const countPokemon = (pokemons: PokemonWithoutOwner[]): { pokemonCount: number } => {}
+export const countPokemon = (pokemons: PokemonWithoutOwner[]): { pokemonCount: number } => {
+    const pokemonCount: number = pokemons.reduce((akumulator) => akumulator++, 0)
+    return { pokemonCount }
+}
 
 /**
  * 3.
