@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`First testing block should return a object 1`] = `
+{
+  "b": "text",
+  "c": true,
+  "status": 4,
+}
+`;
