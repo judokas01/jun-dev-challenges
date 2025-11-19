@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Object matching of createAllRandomAddress Match to object Match to snapshot should create a address, when company the isCompany is false 1`] = `
+{
+  "city": "Stiedemanntown",
+  "company": undefined,
+  "country": "Bahamas",
+  "name": "Orville Rath",
+  "street": "15428 The Mews",
+  "zipCode": "74859",
+}
+`;
+
+exports[`Object matching of createAllRandomAddress Match to object Match to snapshot should create a address, when company the isCompany is true 1`] = `
+{
+  "city": "Heathcotecester",
+  "company": "Jaskolski, Conroy and Ondricka",
+  "country": "Slovakia",
+  "name": "Sonya Weissnat DVM",
+  "street": "9951 Cynthia Shore",
+  "zipCode": "61088",
+}
+`;
+
+exports[`Object matching of createPartiallyStaticAddress Match to object Match to snapshot should create a address, when company the isCompany is false 1`] = `
+{
+  "city": "Prague",
+  "company": undefined,
+  "country": "Czech Republic",
+  "name": "Hubert Collier-Daugherty",
+  "street": "Turner Flat",
+  "zipCode": "11000",
+}
+`;
+
+exports[`Object matching of createPartiallyStaticAddress Match to object Match to snapshot should create a address, when company the isCompany is true 1`] = `
+{
+  "city": "Prague",
+  "company": "Alza",
+  "country": "Czech Republic",
+  "name": "Leslie Monahan",
+  "street": "Kris Avenue",
+  "zipCode": "11000",
+}
+`;
+
+exports[`Object matching of createStaticAddress Match to snapshot should create a address, when company the isCompany is false 1`] = `
+{
+  "city": "Prague",
+  "company": undefined,
+  "country": "Czech Republic",
+  "name": "Prokop Buben",
+  "street": "Dlouha trida 1",
+  "zipCode": "11000",
+}
+`;
+
+exports[`Object matching of createStaticAddress Match to snapshot should create a address, when company the isCompany is true 1`] = `
+{
+  "city": "Prague",
+  "company": "Alza",
+  "country": "Czech Republic",
+  "name": "Prokop Buben",
+  "street": "Dlouha trida 1",
+  "zipCode": "11000",
+}
+`;
