@@ -2,23 +2,23 @@
 
 exports[`Object matching of createAllRandomAddress Match to object Match to snapshot should create a address, when company the isCompany is false 1`] = `
 {
-  "city": "Stiedemanntown",
+  "city": Any<String>,
   "company": undefined,
-  "country": "Bahamas",
-  "name": "Orville Rath",
-  "street": "15428 The Mews",
-  "zipCode": "74859",
+  "country": Any<String>,
+  "name": Any<String>,
+  "street": Any<String>,
+  "zipCode": Any<String>,
 }
 `;
 
 exports[`Object matching of createAllRandomAddress Match to object Match to snapshot should create a address, when company the isCompany is true 1`] = `
 {
-  "city": "Heathcotecester",
-  "company": "Jaskolski, Conroy and Ondricka",
-  "country": "Slovakia",
-  "name": "Sonya Weissnat DVM",
-  "street": "9951 Cynthia Shore",
-  "zipCode": "61088",
+  "city": Any<String>,
+  "company": Any<String>,
+  "country": Any<String>,
+  "name": Any<String>,
+  "street": Any<String>,
+  "zipCode": Any<String>,
 }
 `;
 
@@ -27,8 +27,8 @@ exports[`Object matching of createPartiallyStaticAddress Match to object Match t
   "city": "Prague",
   "company": undefined,
   "country": "Czech Republic",
-  "name": "Hubert Collier-Daugherty",
-  "street": "Turner Flat",
+  "name": Any<String>,
+  "street": Any<String>,
   "zipCode": "11000",
 }
 `;
@@ -38,8 +38,8 @@ exports[`Object matching of createPartiallyStaticAddress Match to object Match t
   "city": "Prague",
   "company": "Alza",
   "country": "Czech Republic",
-  "name": "Leslie Monahan",
-  "street": "Kris Avenue",
+  "name": Any<String>,
+  "street": Any<String>,
   "zipCode": "11000",
 }
 `;

@@ -87,11 +87,17 @@ describe('Object matching of createPartiallyStaticAddress', () => {
         describe('Match to snapshot', () => {
             it('should create a address, when company the isCompany is true', () => {
                 const address = createPartiallyStaticAddress(true)
-                expect(address).toMatchSnapshot()
+                expect(address).toMatchSnapshot({
+                    street: expect.any(String),
+                    name: expect.any(String),
+                })
             })
             it('should create a address, when company the isCompany is false', () => {
                 const address = createPartiallyStaticAddress(false)
-                expect(address).toMatchSnapshot()
+                expect(address).toMatchSnapshot({
+                    street: expect.any(String),
+                    name: expect.any(String),
+                })
             })
         })
     })
@@ -124,11 +130,24 @@ describe('Object matching of createAllRandomAddress', () => {
         describe('Match to snapshot', () => {
             it('should create a address, when company the isCompany is true', () => {
                 const address = createAllRandomAddress(true)
-                expect(address).toMatchSnapshot()
+                expect(address).toMatchSnapshot({
+                    street: expect.any(String),
+                    city: expect.any(String),
+                    country: expect.any(String),
+                    zipCode: expect.any(String),
+                    name: expect.any(String),
+                    company: expect.any(String),
+                })
             })
             it('should create a address, when company the isCompany is false', () => {
                 const address = createAllRandomAddress(false)
-                expect(address).toMatchSnapshot()
+                expect(address).toMatchSnapshot({
+                    street: expect.any(String),
+                    city: expect.any(String),
+                    country: expect.any(String),
+                    zipCode: expect.any(String),
+                    name: expect.any(String),
+                })
             })
         })
     })
